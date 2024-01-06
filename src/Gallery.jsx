@@ -31,10 +31,14 @@ const Gallery = () => {
     );
   }
   const results = response.data.results;
-  if (results.length < 1)
-    <section className="image-container">
-      <h4>No images found...</h4>
-    </section>;
+  if (results.length < 1) {
+    return (
+      <section className="image-container">
+        <h4>No images found...</h4>
+      </section>
+    );
+  }
+
   return (
     <section className="image-container">
       {results.map((item) => {
